@@ -1,0 +1,4 @@
+['remote "storage"']
+url = ..\gdrive:\1SYMbPeIZ5KzzvODPFf5K3mOWelc-aALh
+[core]
+remote = storage
