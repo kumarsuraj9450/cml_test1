@@ -15,10 +15,10 @@ jobs:
           pip install -r requirements.txt
           python linear.py
           
-          cat "# Results" >> report.md
-          cat "## Train" >> report.md
+          echo "# Results" >> report.md
+          echo "## Train" >> report.md
           cml-publish train.png --md >> report.md
-          cat "## Test" >> report.md
+          echo "## Test" >> report.md
           cml-publish test.png --md >> report.md
           # Write your CML report
           #cat results.txt >> report.md
