@@ -1,4 +1,4 @@
 ['remote "storage"']
-url = ..\data\gdrive:\11OX2HCLGQNMuBudP508LOfwGF35s0qpK
+url = gdrive:\\11OX2HCLGQNMuBudP508LOfwGF35s0qpK
 [core]
 remote = storage
