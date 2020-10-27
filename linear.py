@@ -21,6 +21,9 @@ prediction=lr.predict(X_test)
 plt.scatter(y_test,prediction)
 metrics.mean_squared_error(y_test,prediction)
 plt.plot(X_train[:,1],y_train,"b*")
+plt.save('train.png')
 plt.plot(X_test[:,1],prediction,"r*")
+plt.save('test.png')
+
 
 plt.show()
