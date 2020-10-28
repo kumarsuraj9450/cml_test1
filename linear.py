@@ -28,4 +28,4 @@ plt.plot(X_test[:,1],prediction,"r*")
 plt.savefig('test.png')
 
 
-#plt.show()
+plt.show()
