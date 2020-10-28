@@ -1,4 +1,4 @@
 [core]
-remote = remmote
-['remote "remmote"']
-url = gdrive:\\11OX2HCLGQNMuBudP508LOfwGF35s0qpK
+remote = remote
+['remote "remote"']
+url = gdrive://11OX2HCLGQNMuBudP508LOfwGF35s0qpK
