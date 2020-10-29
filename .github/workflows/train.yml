@@ -13,13 +13,22 @@ jobs:
 
           # Your ML workflow goes here
           pip install -r requirements.txt
-          python linear.py
+          # python linear.py
+          python gan.py
           
-          echo "# Results" >> report.md
-          echo "## Train" >> report.md
-          cml-publish train.png --md >> report.md
-          echo "## Test" >> report.md
-          cml-publish test.png --md >> report.md
+          ls storage
+          # echo "# Results" >> report.md
+          # echo "## Train" >> report.md
+          # cml-publish train.png --md >> report.md
+          # echo "## Test" >> report.md
+          # cml-publish test.png --md >> report.md
           # Write your CML report
-          #cat results.txt >> report.md
+          # cat results.txt >> report.md
+          cat data.txt >> report.md
           cml-send-comment report.md
+
+      - name: model save dict
+        uses: actions/upload-artifact@v2
+        with:
+          name: model weights
+          path:  storage/mnist/*epoch
