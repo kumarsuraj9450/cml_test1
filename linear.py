@@ -17,6 +17,7 @@ plt.title("Train Data")
 plt.grid("on")
 plt.plot(X_train[:,1],y_train)
 plt.savefig('data/train.png')
+plt.savefig('train.png')
 
 prediction=lr.predict(X_test)
 plt.scatter(y_test,prediction)
@@ -26,6 +27,7 @@ plt.grid("on")
 plt.plot(X_train[:,1],y_train,"b*")
 plt.plot(X_test[:,1],prediction,"r*")
 plt.savefig('data/test.png')
+plt.savefig('test.png')
 
 
 plt.show()
