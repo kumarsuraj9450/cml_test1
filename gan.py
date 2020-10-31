@@ -146,12 +146,15 @@ model = net()
         
 outfile = open('data.txt', 'w') 
 
-opt = torch.optim.Adam(model.parameters(),lr = 1e-3, weight_decay = 3e-3 )
+opt = torch.optim.Adam(model.parameters(),lr = 3e-4, weight_decay = 3e-3 )
 
 EPOCHS  = 10
 
+scheduler = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=9e-3, steps_per_epoch=len(trainset), epochs=EPOCHS)
+
 for e in tnrange(EPOCHS, desc='EPOCHS', leave='False', unit='Epoch'):
     model.train()
+
     for data in tqdm(trainset, desc='Training Loop', leave='False', unit='batch'):
         x,y = data
         model.zero_grad()
@@ -159,7 +162,8 @@ for e in tnrange(EPOCHS, desc='EPOCHS', leave='False', unit='Epoch'):
         loss = criterion(x.view(-1,28*28),out)
         loss.backward()
         opt.step()
-        
+    scheduler.step()
+    
     loss_batch = [] 
     
     for data in tqdm(testset, desc='Test Loop', leave='False', unit='batch'):
